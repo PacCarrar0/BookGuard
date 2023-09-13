@@ -1,0 +1,26 @@
+{
+  "name": "melodymemo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paccarrar0/melodymemo.git"
+  },
+  "keywords": [],
+  "author": "pedro carraro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paccarrar0/melodymemo/issues"
+  },
+  "homepage": "https://github.com/paccarrar0/melodymemo#readme",
+  "dependencies": {
+    "xyz": "^4.0.0"
+  },
+  "devDependencies": {
+    "abc": "^0.6.1"
+  }
+}
