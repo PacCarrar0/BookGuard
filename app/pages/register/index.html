@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="referrer" content="never">
+        <meta name="referrer" content="no-referrer">
+
+        <link rel="stylesheet" href="/assets/libraries/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="/assets/libraries/bootstrap/js/bootstrap.min.js">
+        <link rel="stylesheet" href="/style.css">
+        <title>MelodyMemo</title>
+    </head>
+    <body class="container d-flex justify-content-center bg-success">
+        <script src="/assets/libraries/jquery/jquery.min.js"></script>
+        <script type="module" src="/app/pages/register/register.js"></script>
+
+        <div class="form1">
+            <header>
+                <h1 class="text-secondary text-decoration-underline text-center">
+                    Melody
+                    <img src="/assets/resources/icons/speaker-fill.svg" alt="Bootstrap" id="speaker" width="45" height="43">
+                    Memo
+                </h1>
+            </header>
+            <main>
+                <form class="register-form" id="form-register" action="/index.html" method="get">
+                    <div class="input-group-sm mx-5 bg-success">
+                        <input 
+                            type="text" 
+                            id="name-input" 
+                            class="form-control bg-transparent border-secondary " 
+                            placeholder="Nome"
+                            pattern="^(\s?[A-ZÀ-Ú][a-zà-ú]*)+$"
+                            autofocus
+                            required
+                        />
+                        <span class="name-error" id="name-error"></span>
+                    </div>
+                    <div class="input-group-sm mx-5 mt-3 bg-success">
+                        <input 
+                            pattern="^(?=.*\d)[A-Za-z\d]{4,}$"
+                            type="password" 
+                            id="password-input" 
+                            class="form-control bg-transparent border-secondary" 
+                            placeholder="Senha"
+                            required
+                        />
+                        <span class="name-error" id="password-error"></span>
+                    </div>
+                    <div class="input-group-sm mx-5 mt-3 mb-5 bg-success">
+                        <input 
+                            pattern="^(?=.*\d)[A-Za-z\d]{4,}$"
+                            type="password" 
+                            id="confirm-password-input" 
+                            class="form-control bg-transparent border-secondary" 
+                            placeholder="Repita a senha"
+                            required
+                        />
+                        <span class="name-error" id="confirm-password-error"></span>
+                    </div>
+                    <div class="d-flex justify-content-center gap-2">
+                        <button id="submit-button" type="submit" class="btn btn-outline-secondary btn-sm mb-4"><span class="button1" data-toggle="modal" data-target="#form-return">CADASTRAR</span></button>
+                        <button id="clear-btn" type="button" class="btn btn-outline-secondary btn-sm mb-4"><span class="button1">LIMPAR</span></button>
+                    </div>
+                </form>
+                <div id="result" class="text-center"></div>
+            </main>
+        </div>
+    </body>
+</html>

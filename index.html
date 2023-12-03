@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="referrer" content="never">
+        <meta name="referrer" content="no-referrer">
+
+        <link rel="stylesheet" href="assets/libraries/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="assets/libraries/bootstrap/js/bootstrap.min.js">
+        <link rel="stylesheet" href="/style.css">
+        <title>MelodyMemo</title>
+    </head>
+    <body class="container text-center d-flex justify-content-center bg-success">
+        <div class="form1">
+            <header>
+                <h1 class="text-secondary text-decoration-underline">
+                    Melody
+                    <img src="/assets/resources/icons/speaker-fill.svg" alt="Bootstrap" id="speaker" width="45" height="43">
+                    Memo</h1>
+            </header>
+            <main>
+                <form class="login-form" action="/app/pages/home/" method="get">
+                    <div class="input-group-sm mx-5 bg-success">
+                        <input 
+                        type="text" 
+                        id="name-input" 
+                        class="form-control bg-transparent border-secondary" 
+                        placeholder="E-mail" 
+                        autofocus
+                        />
+                    </div>
+                    <div class="input-group-sm mx-5 mb-3 mt-3 bg-success">
+                        <input type="password"
+                        id="password-input" 
+                        class="form-control bg-transparent border-secondary" 
+                        placeholder="Senha"
+                        />
+                        <div id="user-error" class="text-secondary mb-3 mt-2"></div>
+                    </div>
+
+                    <button id="submit-button" type="submit" class="btn btn-outline-secondary btn-sm mb-4"><span class="button1">ENTRAR</span></button>
+
+                    <p class="text-primary">Não possui uma conta?<a id="register-link" href="/app/pages/register/index.html" class="text-decoration-none">Clique aqui.</a></p>
+                </form>
+            </main>
+        </div>
+        <script type="module" src="/index.js"></script>
+    </body>
+</html>

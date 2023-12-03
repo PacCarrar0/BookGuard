@@ -1,0 +1,102 @@
+#name-input::placeholder{
+    color: #DB1433;
+    font-family: Montserrat;
+}
+
+#password-input::placeholder{
+    color: #DB1433;
+    font-family: Montserrat;
+}
+
+#profile-password-input::placeholder{
+    color: #0E1531;
+    font-family: Montserrat;
+    max-width: 16rem;
+}
+
+#confirm-password-input::placeholder{
+    color: #DB1433;
+    font-family: Montserrat;
+}
+
+#formInput::placeholder{
+    color: #0E1531;
+    font-family: Montserrat;
+}
+
+#register-link:hover {
+    color: #DB1433;
+    text-decoration: none;
+}
+
+#form-return{
+    width: 50%;
+    height: 50%;
+}
+
+#user-place{
+    font-family: Lobster;
+    font-size: 1rem;
+}
+
+.login-form input:focus {
+    box-shadow: none;
+}
+
+.register-form input:focus {
+    box-shadow: none;
+}
+
+@font-face {
+    font-family: 'Lobster';
+    src: url('/assets/resources/fonts/lobster/Lobster-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/assets/resources/fonts/montserrat/Montserrat-VariableFont_wght.ttf');
+}
+
+.name-error{
+    color: #DB1433;
+}
+
+h1 {
+    font-family: Lobster;
+    font-size: 220%;
+    margin-top: 13rem;
+    margin-bottom: 10%;
+}
+
+h2{
+    font-family: Lobster;
+    font-size: 200%;
+    margin-top: 1rem;
+}
+
+h3 {
+    font-family: Lobster;
+    font-size: 120%;
+    margin-bottom: 0rem;
+}
+
+.button1 {
+    font-family: Montserrat;
+    font-weight: 600;
+}
+
+.icone-logo {
+    font-size: large;
+}
+
+.form1 {
+    width: 34rem;
+}
+
+.profileImage{
+    border-radius: 100%;
+    width: 15rem;
+    height: 15rem;
+    background-image: url(/assets/resources/images/wepik-export-20231108005141haJW.png);
+    background-size: contain;
+}
