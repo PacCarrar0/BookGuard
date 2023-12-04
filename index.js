@@ -5,7 +5,7 @@ function userValidation(){
         users = JSON.parse(usersRegistered),
         nameUser = document.getElementById('name-input').value,
         passwordUser = document.getElementById('password-input').value,
-        errorMessage = document.getElementById('user-error');
+        errorMessage = document.getElementById('login-error');
 
     for(let i = 0; i < users.length; i++){
       let currentProfile = users[i];

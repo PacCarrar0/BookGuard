@@ -1,52 +1,3 @@
-#name-input::placeholder{
-    color: #DB1433;
-    font-family: Montserrat;
-}
-
-#password-input::placeholder{
-    color: #DB1433;
-    font-family: Montserrat;
-}
-
-#profile-password-input::placeholder{
-    color: #0E1531;
-    font-family: Montserrat;
-    max-width: 16rem;
-}
-
-#confirm-password-input::placeholder{
-    color: #DB1433;
-    font-family: Montserrat;
-}
-
-#formInput::placeholder{
-    color: #0E1531;
-    font-family: Montserrat;
-}
-
-#register-link:hover {
-    color: #DB1433;
-    text-decoration: none;
-}
-
-#form-return{
-    width: 50%;
-    height: 50%;
-}
-
-#user-place{
-    font-family: Lobster;
-    font-size: 1rem;
-}
-
-.login-form input:focus {
-    box-shadow: none;
-}
-
-.register-form input:focus {
-    box-shadow: none;
-}
-
 @font-face {
     font-family: 'Lobster';
     src: url('/assets/resources/fonts/lobster/Lobster-Regular.ttf');
@@ -57,8 +8,99 @@
     src: url('/assets/resources/fonts/montserrat/Montserrat-VariableFont_wght.ttf');
 }
 
-.name-error{
+/*Tela de Perfil*/
+#profile-password-input::placeholder{
+    color: #0E1531;
+    font-family: Montserrat;
+    max-width: 16rem;
+}
+
+#user-place{
+    font-family: Lobster;
+    font-size: 1rem;
+}
+
+.profileImage{
+    border-radius: 100%;
+    width: 15rem;
+    height: 15rem;
+    background-image: url(/assets/resources/images/wepik-export-20231108005141haJW.png);
+    background-size: contain;
+    box-shadow: 1px 1px 6px black;
+}
+
+h2{
+    font-family: Lobster;
+    font-size: 200%;
+    margin-top: 1rem;
+}
+/*Tela de Perfil*/
+
+/*Tela de Registro*/
+#confirm-password-input::placeholder{
     color: #DB1433;
+    font-family: Montserrat;
+}
+
+.register-form input:focus {
+    box-shadow: none;
+}
+
+.register-error{
+    color: #DB1433;
+}
+/*Tela de Registro*/
+
+/*Tela de Login*/
+#register-link:hover {
+    color: #DB1433;
+    text-decoration: none;
+}
+
+.login-form input:focus {
+    box-shadow: none;
+}
+/*Tela de Login*/
+
+/*Criação de composição*/
+.modal-content{
+    border-color: #DB1433;
+    box-shadow: 1px 1px 10px black;    
+}
+
+.modal-content input{
+    color: #0E1531;
+}
+
+.modal-content input::placeholder{
+    color: #0E1531;
+    font-family: Montserrat;
+}
+
+.modal-title{
+    font-family: Montserrat;
+    font-size: 1rem;
+}
+/*Criação de composição*/
+
+/*Multiuso*/
+#name-input::placeholder{
+    color: #DB1433;
+    font-family: Montserrat;
+}
+
+#password-input::placeholder{
+    color: #DB1433;
+    font-family: Montserrat;
+}
+
+.button1 {
+    font-family: Montserrat;
+    font-weight: 600;
+}
+
+.form1 {
+    width: 34rem;
 }
 
 h1 {
@@ -68,35 +110,29 @@ h1 {
     margin-bottom: 10%;
 }
 
-h2{
-    font-family: Lobster;
-    font-size: 200%;
-    margin-top: 1rem;
-}
-
 h3 {
     font-family: Lobster;
     font-size: 120%;
     margin-bottom: 0rem;
 }
+/*Multiuso*/
 
-.button1 {
-    font-family: Montserrat;
-    font-weight: 600;
+.card{
+    border-color: #DB1433;
+    box-shadow: 1px 1px 7px; 
 }
 
-.icone-logo {
-    font-size: large;
+.card h5{
+    font-size: 1rem;
+    font-family: Lobster;
 }
 
-.form1 {
-    width: 34rem;
+.card h4{
+    font-size: 1.5rem;
+    font-family: Lobster;
+    margin-bottom: 0rem;
 }
 
-.profileImage{
-    border-radius: 100%;
-    width: 15rem;
-    height: 15rem;
-    background-image: url(/assets/resources/images/wepik-export-20231108005141haJW.png);
-    background-size: contain;
+.card button{
+    color: black;
 }
