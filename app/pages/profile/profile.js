@@ -83,9 +83,9 @@ let submitButton = document.getElementById('submit-button');
 submitButton.addEventListener('click', function (event) {
   event.preventDefault()
 
+  onSubmit();
+
   setTimeout(function () {
     window.location.reload();
-  }, 500)
-
-  onSubmit();
+  }, 1000)
 });

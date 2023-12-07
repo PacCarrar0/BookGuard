@@ -58,7 +58,79 @@
         </div>
       </div>
     </nav>
+    <main>
+      <div class="container composition-data">
+        <div id="composition-name" class="my-3"></div>
+    
+        <div class="row gy-3" id="teste">
+            <div class="col-lg-6">
+              <a id="image-modal-trigger1">
+                <div class="card p-2 d-flex flex-row align-items-center justify-content-between">
+                  <span class="ms-3">Tablatura</span>
+                  <button type="button" id="upload-button1" class="btn" type="file">
+                    <img src="/assets/resources/icons/cloud-arrow-up.svg" alt="Bootstrap" width="26" height="26">
+                    <input type="file" style="display: none;" id="tablature-file" onchange="">
+                  </button>
+                </div>
+              </a>
+            </div>
 
+            <div class="col-lg-6">
+              <a id="image-modal-trigger2">
+                <div class="card p-2 d-flex flex-row align-items-center justify-content-between">
+                  <span class="ms-3">Partitura</span>
+                  <button id="upload-button2" class="btn" type="file">
+                    <img src="/assets/resources/icons/cloud-arrow-up.svg" alt="Bootstrap" width="26" height="26">
+                    <input type="file" style="display: none;" id="sheet-music-file" onchange="">
+                  </button>
+                </div>
+              </a>
+            </div>
+            
+            <div class="col-lg-12" id="letter-modal-trigger" style="cursor: pointer;">
+              <div class="card p-2 d-flex flex-row align-items-center justify-content-between">
+                <span class="ms-3">Letra</span>
+              </div>
+            </div>
+        </div>
+      </div>
+      
+      <!--Modal letra-->
+      <div class="modal" tabindex="-1" id="letter-modal" style="display: none;">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Letra</h5>
+              <button type="button" id="close-button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex justify-content-center">
+              <form class="container text-center">
+                <textarea class="form-control mb-3" name="letter" id="letter-content" cols="30" rows="10"></textarea>               
+
+                <button type="button" id="letter-submit-button" class="btn btn-secondary button1">Salvar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Modal letra-->
+      <!--Modal imagem-->
+      <div class="modal" tabindex="-1" id="image-modal" style="display: none;">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title"></h5>
+              <button type="button" id="image-modal-close-button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex justify-content-center">
+              
+            </div>
+          </div>
+        </div>
+      </div>  
+      <!--Modal imagem-->
+    </main>
     <script src="/assets/libraries/bootstrap/js/bootstrap.min.js"></script>
+    <script type="module" src="/app/pages/composition/composition.mjs"</script></script>
   </body>
 </html>

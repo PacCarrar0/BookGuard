@@ -19,38 +19,48 @@ if (fromSidenav === 'true') {
 
 //Cadastro dos dados da composição
 function onSubmit(){
+  const UserIndex = JSON.parse(localStorage.getItem('index'));
+  const users = JSON.parse(localStorage.getItem('records'));
+  let userData = users[UserIndex];
+  let userCompositions = userData.tuples ||  [] ;
+  //let composition = userCompositions[Index];
+
+
   const compositionName = document.getElementById('name-composition-input').value;
   const compositiongenre = document.getElementById('genre-composition-input').value;
-
+/*
   const userIndex = parseInt(localStorage.getItem('index')) || 0;
-
-  const compositionsData = JSON.parse(localStorage.getItem('compositions')) || {};
-
+  const compositionsData = JSON.parse(localStorage.getItem('records')) || {};
   const userData = compositionsData[userIndex] || { tuples: [] };
-
-  if (!userData.tuples) {
+*/
+  /*if (!userData.tuples) {
       userData.tuples = [];
-  }
+  }*/
 
-  const novaTupla = {"name": compositionName, "genre": compositiongenre, "letter": ""};  // Substitua com os campos e valores reais
-  userData.tuples.push(novaTupla);
+  const novaTupla = {"name": compositionName, "genre": compositiongenre, "letter": ""};
 
-  compositionsData[userIndex] = userData;
-  localStorage.setItem('compositions', JSON.stringify(compositionsData));
+  //users[UserIndex] = userData;
+  userCompositions.push(novaTupla);
+  userData.tuples = userCompositions;
+  users[UserIndex] = userData;
+
+  localStorage.setItem('records', JSON.stringify(users));
 }
 //Cadastro dos dados da composição
 
 //Exclusão do card da composição
 function deleteCard(index) {
-  const userIndex = parseInt(localStorage.getItem('index')) || 0;
-  let compositionData = JSON.parse(localStorage.getItem('compositions'));
-  let userCompositions = compositionData[userIndex];
-  let userCompositionsData = userCompositions.tuples;
+  const UserIndex = parseInt(localStorage.getItem('index')) || 0;
+  let users = JSON.parse(localStorage.getItem('records'));
+  let userData = users[UserIndex];
+  let userCompositions = userData.tuples;
 
-  userCompositionsData.splice(index, 1);
-
-  compositionData[userIndex] = userCompositions;
-  localStorage.setItem('compositions', JSON.stringify(compositionData));
+  userCompositions.splice(index, 1);
+  
+  userData.tuples = userCompositions;
+  users[UserIndex] = userData;
+  
+  localStorage.setItem('records', JSON.stringify(users));
 
   window.location.reload();
 }
@@ -62,35 +72,43 @@ function displayCards() {
   const app = document.getElementById('cards-container');
   app.innerHTML = '';
 
-  let compositionData = JSON.parse(localStorage.getItem('compositions'));
-  let userCompositions = compositionData[userIndex];
-  let userCompositionsData = userCompositions.tuples;
+  let users = JSON.parse(localStorage.getItem('records'));
+  let userData = users[userIndex];
+  let userCompositions = userData.tuples;
 
   const rowElement = document.createElement('div');
   rowElement.classList.add('row', 'row-cols-lg-2', 'gx-3');
   app.appendChild(rowElement);
 
-  userCompositionsData.forEach(function(composition, i) {
+  userCompositions.forEach(function(composition, i) {
     const cardElement = document.createElement('div');
   
     cardElement.innerHTML = 
       `
-      <div class="card mb-3">
-        <div class="card-body">
-          <div class="d-flex justify-content-between">
-            <h4 class="card-text">${userCompositionsData[i].name}</h4>
-            <button type="button" id="card-close-button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <a id="composition-data-link" href="/app/pages/composition/" class="text-decoration-none">
+        <div class="card mb-3">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <h4 class="card-text">${userCompositions[i].name}</h4>
+              <button type="button" id="card-close-button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <h5 class="card-text">${userCompositions[i].genre}</h5>
           </div>
-          <h5 class="card-text">${userCompositionsData[i].genre}</h5>
         </div>
-      </div>
+      </a>
       `;
   
     // Adiciona um ouvinte de evento ao botão, chamando a função deleteCard com o índice
     const deleteButton = cardElement.querySelector('.btn-close');
-    deleteButton.addEventListener('click', function() {
+    deleteButton.addEventListener('click', function(event) {
+      event.preventDefault();
       deleteCard(i);
     });
+
+    const CompositionDataLink = cardElement.querySelector('.text-decoration-none');
+    CompositionDataLink.addEventListener('click', function() {
+      localStorage.setItem('compositionIndex', i)
+    })
   
     rowElement.appendChild(cardElement);
   });
@@ -102,16 +120,20 @@ document.addEventListener('DOMContentLoaded', function() {
   displayCards()
 })
 
+let modal = document.getElementById('composition-modal');
+
 document.getElementById('composition-submit-button').addEventListener('click', function(event){
   event.preventDefault();
   onSubmit()
-  let modal = document.getElementById('composition-modal');
   modal.style.display = 'none'
   window.location.href = '/app/pages/home'
 });
 
+document.getElementById('composition-create-button').addEventListener('click', function() {
+  modal.style.display = 'block'
+})
+
 document.getElementById('close-button').addEventListener('click', function (){
-  let modal = document.getElementById('composition-modal');
   modal.style.display = 'none'
   window.location.href = '/app/pages/home'
 })
