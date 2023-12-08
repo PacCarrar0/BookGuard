@@ -83,6 +83,43 @@ h2{
 }
 /*Criação de composição*/
 
+/*Tela Home*/
+.card{
+    border-color: #DB1433;
+    box-shadow: 1px 1px 7px; 
+}
+
+.card h5{
+    font-size: 1rem;
+    font-family: Lobster;
+}
+
+.card h4{
+    font-size: 1.5rem;
+    font-family: Lobster;
+    margin-bottom: 0rem;
+}
+/*\Tela Home*/
+
+/*Tela de conteúdo das composições*/
+.composition-data .card{
+    background-color: #DB1433;
+    font-family: Montserrat;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#composition-name{
+    font-family: Lobster;
+    font-size: 2.5rem;
+}
+
+#letter-content{
+    height: 30rem;
+    resize: none;
+}
+/*Tela de conteúdo das composições*/
+
 /*Multiuso*/
 #name-input::placeholder{
     color: #DB1433;
@@ -116,37 +153,3 @@ h3 {
     margin-bottom: 0rem;
 }
 /*Multiuso*/
-
-.card{
-    border-color: #DB1433;
-    box-shadow: 1px 1px 7px; 
-}
-
-.card h5{
-    font-size: 1rem;
-    font-family: Lobster;
-}
-
-.card h4{
-    font-size: 1.5rem;
-    font-family: Lobster;
-    margin-bottom: 0rem;
-}
-
-.composition-data .card{
-    background-color: #DB1433;
-    font-family: Montserrat;
-    font-size: 2rem;
-    font-weight: bold;
-}
-
-#composition-name{
-    font-family: Lobster;
-    font-size: 2.5rem;
-}
-
-#letter-content{
-    height: 30rem;
-    resize: none;
-}
-

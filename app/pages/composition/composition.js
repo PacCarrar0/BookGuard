@@ -78,6 +78,8 @@ $('#upload-button2').on('click', function(event) {
 });
 //Gerenciamento do upload de imagem
 
+/* Parte do cloudinary
+
 const unsignedUploadPreset = 'doc_codepen_example';
 
 function uploadFile(file) {
@@ -110,4 +112,4 @@ let fileInput = document.getElementById('sheet-music-file');
 fileInput.addEventListener('change', function() {
   let file = fileInput.files[0];
   uploadFile(file);
-})
+})*/

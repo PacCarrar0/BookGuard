@@ -23,23 +23,12 @@ function onSubmit(){
   const users = JSON.parse(localStorage.getItem('records'));
   let userData = users[UserIndex];
   let userCompositions = userData.tuples ||  [] ;
-  //let composition = userCompositions[Index];
-
 
   const compositionName = document.getElementById('name-composition-input').value;
   const compositiongenre = document.getElementById('genre-composition-input').value;
-/*
-  const userIndex = parseInt(localStorage.getItem('index')) || 0;
-  const compositionsData = JSON.parse(localStorage.getItem('records')) || {};
-  const userData = compositionsData[userIndex] || { tuples: [] };
-*/
-  /*if (!userData.tuples) {
-      userData.tuples = [];
-  }*/
 
   const novaTupla = {"name": compositionName, "genre": compositiongenre, "letter": ""};
 
-  //users[UserIndex] = userData;
   userCompositions.push(novaTupla);
   userData.tuples = userCompositions;
   users[UserIndex] = userData;

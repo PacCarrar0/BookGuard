@@ -43,9 +43,8 @@ https://www.figma.com/file/ER7KzYdHy4xCSXwCKDkst6/MelodyMemo?type=design&node-id
 
 ## Manual de execução
 
-- Clonar o repositório com `git clone`
-- Instalar o node.js para seu sistema operacional presente neste link: https://nodejs.org/en/download/
-- Abrir um terminal pelo VSCode ou qualquer terminal do seu Sistema Operacional apontando para o diretório raiz do projeto
-- Instalar as dependências contidas no `package.json`
-  - Comando: `npm i` 
-  
+- Instalar e configurar o git para seu sistema operacional;
+- Clonar o repositório com `git clone`;
+- Instalar o node.js para seu sistema operacional presente neste link: https://nodejs.org/en/download/;
+- Abrir um terminal pelo VSCode ou qualquer terminal do seu Sistema Operacional apontando para o diretório raiz do projeto;
+- Instalar as dependências contidas no `package.json` com o comando `npm i`.

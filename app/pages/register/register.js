@@ -78,8 +78,6 @@ function onSubmit() {
 
   let user1 = new user(name, password);
   userService.saveLocal(user1);
-
-
 }
 
 document.querySelector('#name-input').addEventListener('input', function () {
