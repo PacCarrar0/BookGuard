@@ -22,7 +22,6 @@
   "dependencies": {
     "jquery": "^3.7.1",
     "jquery-mask-plugin": "^1.14.16",
-    "xyz": "^4.0.0"
   },
   "devDependencies": {
     "abc": "^0.6.1"
