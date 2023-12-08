@@ -43,36 +43,71 @@ document.getElementById('letter-submit-button').addEventListener('click', functi
 //Gerenciamento do modal de imagem
 let modal = document.getElementById('image-modal'),
     modalTitle = modal.querySelector('.modal-title');
-document.getElementById('image-modal-trigger1').addEventListener('click', function(event) {
+
+$('#image-modal-trigger1').on('click', function(event) {
   modal.style.display = 'block';
 
   modalTitle.style.display = 'block'
   modalTitle.textContent = `Tablatura de ${composition.name}`
 });
 
-document.getElementById('image-modal-trigger2').addEventListener('click', function(event) {
+$('#image-modal-trigger2').on('click', function(event) {
   modal.style.display = 'block';
 
   modalTitle.style.display = 'block'
   modalTitle.textContent = `Partitura de ${composition.name}`
 });
 
-document.getElementById('image-modal-close-button').addEventListener('click', function() {
+$('#image-modal-close-button').on('click', function() {
   modal.style.display = 'none'
 });
 //Gerenciamento do modal de imagem
 
 //Gerenciamento do upload de imagem
-document.getElementById('upload-button1').addEventListener('click', function(event) {
+$('#upload-button1').on('click', function(event) {
   let fileInput = document.getElementById('tablature-file');
     
   event.stopPropagation();
   fileInput.click();
 });
 
-document.getElementById('upload-button2').addEventListener('click', function(event) {
+$('#upload-button2').on('click', function(event) {
   let fileInput = document.getElementById('sheet-music-file');
   event.stopPropagation();
   fileInput.click();
 });
 //Gerenciamento do upload de imagem
+
+const unsignedUploadPreset = 'doc_codepen_example';
+
+function uploadFile(file) {
+  const url = `https://api.cloudinary.com/v1_1/djq3azkyr/upload`;
+  const fd = new FormData();
+  fd.append('file', file);
+
+  fetch(url, {
+    method: 'POST',
+    body: fd,
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      // File uploaded successfully
+      const url = data.secure_url;
+      // Create a thumbnail of the uploaded image, with 150px width
+      const tokens = url.split('/');
+      tokens.splice(-3, 0, 'w_150,c_scale');
+      const img = new Image();
+      img.src = tokens.join('/');
+      document.getElementById('image-modal').appendChild(img);
+    })
+    .catch((error) => {
+      console.error('Error uploading the file:', error);
+    });
+}
+
+let fileInput = document.getElementById('sheet-music-file');
+
+fileInput.addEventListener('change', function() {
+  let file = fileInput.files[0];
+  uploadFile(file);
+})

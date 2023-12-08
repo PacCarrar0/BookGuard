@@ -1,6 +1,3 @@
-import {user} from "../../model/user.js"
-import { registerService } from "../../service/user.service.js";
-
 let index = localStorage.getItem("index");
 
 //Exibição dos dados pré coletados do usuário

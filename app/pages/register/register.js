@@ -2,18 +2,6 @@ import { user } from "../../model/user.js";
 import { registerService } from "../../service/user.service.js";
 
 let main = function(){
-  
-  document.addEventListener('DOMContentLoaded', function(){
-
-  let usersRegistered = localStorage.getItem("records");
-  let user = JSON.parse(usersRegistered);
-
-  // Exibindo os dados na div com o ID 'result'
-  const resultDiv = document.getElementById('result');
-  resultDiv.innerHTML = `<p>Nome: ${user[0].name}</p><p>Senha: ${user[0].password}</p>`;
-
-  });
-
   //botão limpar
   document.getElementById('clear-btn').addEventListener('click', function(){
     let field = document.querySelectorAll('#form-register input');

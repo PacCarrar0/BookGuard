@@ -2,10 +2,11 @@
   "name": "melodymemo",
   "version": "1.0.0",
   "description": "",
-  "type": "commonjs",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node composition.js"
   },
   "repository": {
     "type": "git",
@@ -19,8 +20,6 @@
   },
   "homepage": "https://github.com/paccarrar0/melodymemo#readme",
   "dependencies": {
-    "cloudinary": "^1.41.0",
-    "cloudinary-core": "^2.13.0",
     "jquery": "^3.7.1",
     "jquery-mask-plugin": "^1.14.16",
     "xyz": "^4.0.0"
