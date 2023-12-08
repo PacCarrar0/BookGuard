@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # MelodyMemo
-=======
-# melodymemo
->>>>>>> 14aa365ecdddb4618347600b080c0639b9753806
 Este projeto tem como propósito desenvolver uma aplicação web voltada para a organização musical pessoal.
 
 ## Endereço de Deploy - GitHub Pages
