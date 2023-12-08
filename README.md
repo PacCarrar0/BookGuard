@@ -3,7 +3,7 @@ Este projeto tem como propósito desenvolver uma aplicação web voltada para a 
 
 ## Endereço de Deploy - GitHub Pages
 
-X
+https://paccarrar0.github.io/melodymemo/
 
 ## Protótipo
 
